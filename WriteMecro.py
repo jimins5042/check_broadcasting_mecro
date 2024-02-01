@@ -9,7 +9,7 @@ class WriteMecro:
 
     def dc_mecro(self, title):
         print("start mecro")
-        service = Service(executable_path=r'/usr/bin/google-chrome')
+        service = Service(executable_path=r'/usr/bin/chromedriver')
         options = webdriver.ChromeOptions()
         options.add_argument('window-size=1920x1080')
 
