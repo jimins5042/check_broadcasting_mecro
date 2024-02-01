@@ -41,7 +41,7 @@ class WriteMecro:
 
         time.sleep(1)
 
-        driver.find_element(By.NAME, "subject").send_keys(u'test')  # 제목
+        driver.find_element(By.NAME, "subject").send_keys(u'방송 on [테스트 중]')  # 제목
 
         driver.implicitly_wait(1)
 
@@ -51,7 +51,9 @@ class WriteMecro:
 
         time.sleep(1)
 
-        driver.find_element(By.TAG_NAME, "body").send_keys(u"이아나 방송 알림봇 \n방송제목 : " + title)
+        driver.find_element(By.TAG_NAME, "body")\
+            .send_keys(u"이아나 방송 알림봇[임시] \n방송제목 : "
+                       + title + "\n방송주소 : https://play.afreecatv.com/ianavlup/253343223\n")
 
         time.sleep(1)
 

@@ -13,7 +13,7 @@ def scheduler():
 
 # 스케줄러 설정
 schedule = BackgroundScheduler(daemon=True, timezone='Asia/Seoul')
-schedule.add_job(scheduler, 'interval', seconds=5)
+schedule.add_job(scheduler, 'interval', seconds=180)
 schedule.start()
 
 
@@ -76,7 +76,7 @@ def check_Broadcasting():
             print(title)
 
             dc = WriteMecro()
-            # dc.dc_mecro(title)
+            dc.dc_mecro(title)
 
     # 방송 없을 경우
     else:
