@@ -13,7 +13,7 @@ def scheduler():
 
 # 스케줄러 설정
 schedule = BackgroundScheduler(daemon=True, timezone='Asia/Seoul')
-schedule.add_job(scheduler, 'interval', seconds=15)
+schedule.add_job(scheduler, 'interval', seconds=30)
 schedule.start()
 
 
