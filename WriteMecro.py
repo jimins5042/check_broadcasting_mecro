@@ -78,7 +78,7 @@ class WriteMecro:
 
         driver.find_element(By.CSS_SELECTOR, 'button.btn_lightpurple.btn_svc.write').click()
         driver.implicitly_wait(5)
-
+        print("글 등록 완료")
         time.sleep(1)
 
         driver.close()
