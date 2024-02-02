@@ -38,7 +38,7 @@ class WriteMecro:
             )
         options.add_argument("lang=ko_KR")
 
-        driver = webdriver.Chrome(executable_path='/usr/bin/chromedriver', options=options)
+        driver = webdriver.Chrome('/usr/bin/chromedriver', options=options)
 
 
 
