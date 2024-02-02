@@ -9,16 +9,21 @@ class WriteMecro:
 
     def dc_mecro(self, title):
         print("start mecro")
-        service = Service(executable_path=r'/usr/bin/chromedriver')
+        #service = Service(executable_path=r'/usr/bin/chromedriver')
         options = webdriver.ChromeOptions()
-        #options.add_argument('window-size=1920x1080')
-        options.binary_location = "/snap/chromium/2738/usr/lib/chromium-browser/chrome"  # 실제 경로로 변경하세요
+
+        options.add_argument('headless')
+        options.add_argument('window-size=1920x1080')
+        options.add_argument("disable-gpu")
+
+        #options.binary_location = "/snap/chromium/2738/usr/lib/chromium-browser/chrome"  # 실제 경로로 변경하세요
 
         options.add_argument(
             "user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.138 Safari/537.36")
 
         #driver = webdriver.Chrome(options=options)
-        driver = webdriver.Chrome(service=service, options=options)
+        #driver = webdriver.Chrome(service=service, options=options)
+        driver = webdriver.Chrome('/usr/bin/chromedriver', options=options)
 
         driver.get("https://gall.dcinside.com/mini/board/write/?id=iana")  # 갤러리 글쓰기 주소
 
