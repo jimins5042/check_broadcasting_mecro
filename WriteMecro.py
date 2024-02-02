@@ -1,5 +1,6 @@
 import time
 
+import ChromeDriverManager as ChromeDriverManager
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.by import By
@@ -37,9 +38,10 @@ class WriteMecro:
             "user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36"
             )
         options.add_argument("lang=ko_KR")
+        #service = Service(executable_path=r'/usr/bin/chromedriver')
+        #driver = webdriver.Chrome(service=service, options=options)
 
-        driver = webdriver.Chrome('/usr/bin/chromedriver', options=options)
-
+        driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=options)
 
 
         driver.get("https://gall.dcinside.com/mini/board/write/?id=iana")  # 갤러리 글쓰기 주소
