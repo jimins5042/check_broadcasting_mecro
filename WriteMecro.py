@@ -20,8 +20,6 @@ class WriteMecro:
             "user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36"
             )
         options.add_argument("lang=ko_KR")
-        #service = Service(executable_path=r'/usr/bin/chromedriver')
-        #driver = webdriver.Chrome(service=service, options=options)
 
         driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=options)
 
@@ -40,16 +38,16 @@ class WriteMecro:
 
         driver.find_element(By.ID, "btn_gall_nick_name_x").click()
 
-        driver.implicitly_wait(1)
+        driver.implicitly_wait(5)
         driver.find_element(By.NAME, "name").send_keys(u'알림 테스트')  # 닉네임
 
-        driver.implicitly_wait(1)
+        driver.implicitly_wait(5)
 
         time.sleep(2)
 
         driver.find_element(By.NAME, "password").send_keys(u'12345')  # 비밀번호
 
-        driver.implicitly_wait(1)
+        driver.implicitly_wait(5)
 
         time.sleep(1)
 
@@ -59,7 +57,7 @@ class WriteMecro:
 
         driver.find_element(By.NAME, "subject").send_keys(u'방송 on [테스트 중]')  # 제목
 
-        driver.implicitly_wait(1)
+        driver.implicitly_wait(5)
 
         time.sleep(1)
 
@@ -75,11 +73,11 @@ class WriteMecro:
 
         # 글등록
         driver.switch_to.default_content()
-
+        print("글 등록 완료")
         time.sleep(5)
 
         driver.find_element(By.CSS_SELECTOR, 'button.btn_lightpurple.btn_svc.write').click()
-        driver.implicitly_wait(1)
+        driver.implicitly_wait(5)
 
         time.sleep(1)
 
