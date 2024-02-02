@@ -26,7 +26,7 @@ class WriteMecro:
         #driver = webdriver.Chrome(service=service, options=options)
         driver = webdriver.Chrome('/usr/bin/chromedriver', options=options)
 """
-        service = Service(executable_path='/home/ubuntu/chromedriver-linux64/chromedriver')
+        #service = Service(executable_path='/home/ubuntu/chromedriver-linux64/chromedriver')
         options = webdriver.ChromeOptions()
         options.add_argument("--headless")
         options.add_argument(
@@ -35,7 +35,7 @@ class WriteMecro:
         # linux 환경에서 필요한 option
         options.add_argument('--no-sandbox')
         options.add_argument('--disable-dev-shm-usage')
-        driver = webdriver.Chrome(service=service, options=options)
+        driver = webdriver.Chrome(options=options)
 
 
         driver.get("https://gall.dcinside.com/mini/board/write/?id=iana")  # 갤러리 글쓰기 주소
