@@ -51,7 +51,7 @@ def start():
 def check_Broadcasting():
 
     # api를 통한 방송 정보 획득
-    res = requests.get('https://bjapi.afreecatv.com/api/vllagekanin/station',
+    res = requests.get('https://bjapi.afreecatv.com/api/vllageephta/station',
                        headers={'User-Agent': 'Mozilla/5.0'}).json()
 
     data = json.dumps(res)
