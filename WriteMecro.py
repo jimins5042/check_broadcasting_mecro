@@ -1,14 +1,15 @@
 import time
 
-
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.by import By
 from webdriver_manager.chrome import ChromeDriverManager
 
+
 class WriteMecro:
 
     def dc_mecro(self, title):
+
         print("start mecro")
 
         options = webdriver.ChromeOptions()
@@ -23,15 +24,7 @@ class WriteMecro:
 
         driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=options)
 
-        """service = Service(executable_path=r'C:/Windows/chromedriver.exe')
-        options = webdriver.ChromeOptions()
-       # options.add_argument('window-size=1920x1080')
-
-        options.add_argument(
-            "user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.138 Safari/537.36")
-
-        driver = webdriver.Chrome(service=service, options=options)"""
-
+        
         driver.get("https://gall.dcinside.com/mini/board/write/?id=iana")  # 갤러리 글쓰기 주소
         print("셀레니움 작동")
         time.sleep(2)
